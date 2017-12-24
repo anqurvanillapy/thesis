@@ -71,13 +71,13 @@ OOP (面向对象程序设计) 其实隐含了一部分消息传递的思想,
 - 我于大三寒假期间学习 C++, 并阅读了 Pony 的异步 I/O 源码, 了解 `epoll`/`kqueue`
 等 Reactor 模型的高性能事件循环的机制, 能使用基本功能, 而我将做的系统则是设计
 `epoll`/`kqueue` 等系统接口的公用 `traits`, 让用户调用便捷而不直接接触底层
-- 我于大四上期间实现了 C++ 迷你协程库 [acoro](github.com/anqurvanillapy/acoro),
-可改造成参与者类
-- 我于近日阅读 [napajs](github.com/Microsoft/napajs) C++ 源码, 了解了多线程 V8
-实例 (isolate) 的调度机制, 了解了工作池 (worker pool) 的相应原理,
+- 我于大四上期间实现了 C++ 迷你协程库
+[acoro](https://github.com/anqurvanillapy/acoro), 可改造成参与者类
+- 我于近日阅读 [napajs](https://github.com/Microsoft/napajs) C++ 源码,
+了解了多线程 V8 实例 (isolate) 的调度机制, 及其工作池 (worker pool) 的相应原理,
 亲身实践了 *数据同步* 及 *工作分发* 的代码的编写, 还学习到了 C++14
 一些新鲜的内存管理机制
-- 我于近日阅读 [dasynq](github.com/davmac314/dasynq) C++ 源码,
+- 我于近日阅读 [dasynq](https://github.com/davmac314/dasynq) C++ 源码,
 这是个简易的事件循环 (event loop) 系统, 其作者用于编写仿 `systemd`/`init`
 等子进程监听管理系统的后端环境, 其中我了解到了如 *文件描述符 单/双向 监听*,
 *系统信号监听*, *子进程状态监听* 及 *计数器 (timer) 监听* 的设计和实现
@@ -101,3 +101,21 @@ OOP (面向对象程序设计) 其实隐含了一部分消息传递的思想,
 * [Pony 语言 GC 设计论文](https://www.ponylang.org/media/papers/OGC.pdf)
 
 (有待未来添加.)
+
+---
+
+## 操作系统实验课平台的见解
+
+我个人接触过 GNU GRUB 软件的使用 (系统镜像模拟器), 跟着这个
+[教程](https://os.phil-opp.com/) 使用 Rust 语言 *半完成* 过一个简易操作系统,
+到后面教程已经能支持 *堆内存申请* 以及 *段内存结构* 等功能.  我在 GNU GRUB
+中虚拟了一台裸机 (bare metal) 并成功 boot 了这个操作系统.
+
+初次之外, 我还了解到 MIT 使用 [xv6 OS](https://github.com/mit-pdos/xv6-public)
+操作系统进行教学, 让其关键算法由学生完成, 比如进程调度等等.
+
+我还了解到中山大学也是使用了类似教学操作系统 (teaching operating system)
+进行上机实现, 这个我可以询问我的同学进行考察.
+
+我个人对这个实验课平台的搭建也有一些兴趣, 虽然还是更想实现我自己论文的想法,
+但是也想听听老师在这方面有什么样的见解.
