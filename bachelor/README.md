@@ -41,6 +41,18 @@ OOP (面向对象程序设计) 其实隐含了一部分消息传递的思想,
 所以对比来看, 参与者的 *处理数据的方法* 是在调度器运作之后是固定不变的, 是
 *相对静止* 的, 只关注 *数据* 的传递过程, 因而减少了相应的开销.
 
+## 用户场景是?
+
+- 基本系统调用, 文件读写, 标准输入输出流读写等等
+- 涉及到非堵塞 (non-blocking) 的文件描述符 (file descriptor) 的操作, 如
+    + 套接字
+    + 管道
+- 涉及到系统信号监听的应用
+- 涉及到 MPMC (多写多读, multi-producer multi-consumer), SPMC (单写多读,
+single-producer multi-consumer) 等的读写场景
+- 涉及到计时器 (timer) 监听的应用
+- 涉及到子进程状态的监听的应用 (可选)
+
 ## 做这样的系统, 需要几个步骤?
 
 三个, 它们是:
@@ -111,7 +123,7 @@ OOP (面向对象程序设计) 其实隐含了一部分消息传递的思想,
 到后面教程已经能支持 *堆内存申请* 以及 *段内存结构* 等功能.  我在 GNU GRUB
 中虚拟了一台裸机 (bare metal) 并成功 boot 了这个操作系统.
 
-初次之外, 我还了解到 MIT 使用 [xv6 OS](https://github.com/mit-pdos/xv6-public)
+除此之外, 我还了解到 MIT 使用 [xv6 OS](https://github.com/mit-pdos/xv6-public)
 操作系统进行教学, 让其关键算法由学生完成, 比如进程调度等等.
 
 我还了解到中山大学也是使用了类似教学操作系统 (teaching operating system)
